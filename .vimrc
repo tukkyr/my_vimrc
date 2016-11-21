@@ -64,4 +64,4 @@ let g:table_mode_header_fillchar="="
 
 set spell
 hi SpellBad cterm=underline
-hi PmenuSel ctermfg=81 ctermbg=234 cterm=underline
+hi PmenuSel ctermfg=81 ctermbg=234 cterm=bold
