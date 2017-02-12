@@ -19,8 +19,6 @@ NeoBundle 'gtags.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'davidhalter/jedi-vim'
 
-" Do not load vim-pyenv until *.py is opened and
-" make sure that it is loaded after jedi-vim is loaded.
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'mac' : 'make',
