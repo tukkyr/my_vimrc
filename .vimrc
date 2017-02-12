@@ -1,19 +1,44 @@
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if 0 | endif
 
-Plugin 'taglist.vim'
-Plugin 'unite.vim'
-Plugin 'a.vim'
-Plugin 'surround.vim'
-Plugin 'molokai'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'dhruvasagar/vim-table-mode'
+if &compatible
+set nocompatible               " Be iMproved
+endif
 
-call vundle#end()
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'taglist.vim'
+NeoBundle 'unite.vim'
+NeoBundle 'a.vim'
+NeoBundle 'surround.vim'
+NeoBundle 'molokai'
+NeoBundle 'dhruvasagar/vim-table-mode'
+NeoBundle 'gtags.vim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'davidhalter/jedi-vim'
+
+" Do not load vim-pyenv until *.py is opened and
+" make sure that it is loaded after jedi-vim is loaded.
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'mac' : 'make',
+\     'linux' : 'make',
+\    },
+\ }
+
+NeoBundleLazy 'lambdalisue/vim-pyenv', {
+\ 'depends': ['davidhalter/jedi-vim'],
+\ 'autoload': {
+\   'filetypes': ['python', 'python3'],
+\ }}
+
+call neobundle#end()
+
 filetype plugin indent on
+
+NeoBundleCheck
 syntax on
 
 set listchars=tab:>-,eol:$
@@ -26,13 +51,6 @@ set backup
 set backupdir=~/.vim/tmp
 set directory=~/.vim/tmp
 set backspace=indent,eol,start
-set background=dark
-set t_Co=256
-
-augroup myhi
-    autocmd!
-    autocmd ColorScheme * hi PmenuSel ctermfg=81  ctermbg=234 cterm=bold
-augroup END
 
 augroup unite
     autocmd!
@@ -42,11 +60,15 @@ augroup unite
 augroup END
 
 colorscheme molokai
+set background=dark
+set t_Co=256
 
 nnoremap <silent> <space>uu :<c-u>Unite -buffer-name=mru file_mru buffer<CR>
 nnoremap <silent> <space>uf :<c-u>UniteWithBufferDir -buffer-name=files file<CR>
 
 nnoremap <space><space> :<c-u>TlistOpen \| TlistHighlightTag<CR>
+
+nnoremap g] :<c-u>GtagsCursor<CR>
 
 cnoremap <c-g> <c-u>vimgrep<space><c-r><c-w><space>**/*.
 autocmd QuickFixCmdPost *grep* cwindow
@@ -62,6 +84,15 @@ let g:jedi#completions_command = "<C-F>"
 let g:table_mode_corner_corner="+"
 let g:table_mode_header_fillchar="="
 
-set spell
+"set spell
 hi SpellBad cterm=underline
 hi PmenuSel ctermfg=81 ctermbg=234 cterm=bold
+
+let g:quickrun_config = {
+\   "_" : {
+\       "outputter": "quickfix",
+\       "outputter/buffer/close_on_empty" : 1,
+\       "runner" : "vimproc",
+\       "runner/vimproc/updatetime" : 60
+\   }
+\}
