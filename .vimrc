@@ -32,6 +32,11 @@ NeoBundleLazy 'lambdalisue/vim-pyenv', {
 \   'filetypes': ['python', 'python3'],
 \ }}
 
+NeoBundleLazy "nvie/vim-flake8", {
+\ "autoload": {
+\   "filetypes": ["python", "python3", "djangohtml"]
+\ }}
+
 call neobundle#end()
 
 filetype plugin indent on
