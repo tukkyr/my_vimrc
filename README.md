@@ -7,12 +7,17 @@ This setting is for below list.
 
 Need to some extarnal modules for this settings
 
+## Creating tmp dir for vim
+
+```sh
+  mkdir -p ~/.vim/tmp
+```
 ## Downloading neobundle.vim
 
 Download neobundle.vim via git
 
 ```sh
-  mkdir ~/.vim/bundle
+  mkdir -p ~/.vim/bundle
   git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 ```
 
