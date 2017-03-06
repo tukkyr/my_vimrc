@@ -62,6 +62,12 @@ augroup unite
     autocmd FileType unite nmap <buffer> <ESC> <plug>(unite_exit)
 augroup END
 
+augroup indent_setting
+    autocmd!
+    autocmd FileType python setlocal sw=4 ts=4
+    autocmd FileType ruby setlocal sw=2 ts=2
+augroup END
+
 colorscheme molokai
 set background=dark
 set t_Co=256
