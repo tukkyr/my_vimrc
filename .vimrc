@@ -34,7 +34,7 @@ NeoBundleLazy 'lambdalisue/vim-pyenv', {
 
 NeoBundleLazy "nvie/vim-flake8", {
 \ "autoload": {
-\   "filetypes": ["python", "python3", "djangohtml"]
+\   "filetypes": ["python", "python3"]
 \ }}
 
 call neobundle#end()
