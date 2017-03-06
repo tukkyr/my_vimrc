@@ -35,5 +35,30 @@ This setting needs vim that was made with +python3 option.
   LDFLAGS="-Wl,-rpath=${HOME}/.pyenv/versions/2.7.12/lib:${HOME}/.pyenv/versions/3.6.0/lib" ./configure --enable-pythoninterp=dynamic --     enable-python3interp=dynamic --enable-multibyte --enable-fontset --with-features=huge --prefix=/opt/vim
 ```
 
-pull test from gitpython
-test
+## Add pyenv and rbenv
+
+Installing pyenv and pyenv-virtualenv
+
+```sh
+  git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+  git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+  
+  echo 'export PYENV_ROOT=$HOME/.pyenv'> ~/.bash_profile
+  echo 'export PATH=$PYENV_ROOT/bin:$PATH' >> ~/.bash_profile
+  echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+```
+
+Installing rbenv
+
+```sh
+  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+ 
+  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+  echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+```
+
+Reload configuration
+```sh
+  source ~/.bash_profile
+```
