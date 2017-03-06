@@ -95,7 +95,5 @@ let g:quickrun_config = {
 \   "_" : {
 \       "outputter": "quickfix",
 \       "outputter/buffer/close_on_empty" : 1,
-\       "runner" : "vimproc",
-\       "runner/vimproc/updatetime" : 60
 \   }
 \}
