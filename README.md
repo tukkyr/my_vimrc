@@ -47,6 +47,8 @@ Installing pyenv and pyenv-virtualenv
   echo 'export PATH=$PYENV_ROOT/bin:$PATH' >> ~/.bash_profile
   echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
   echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
+  
+  sudo yum install -y zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel
 ```
 
 Installing rbenv
