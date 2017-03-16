@@ -26,9 +26,9 @@ Download neobundle.vim via git
 This setting needs vim that was made with +python3 option.
 
 ```sh
-  CONFIGURE_OPTS="--enable-shared" pyenv install 2.7.12
+  CONFIGURE_OPTS="--enable-shared" pyenv install 2.7.13
   CONFIGURE_OPTS="--enable-shared" pyenv install 3.6.0
-  pyenv global 2.7.12 3.6.0
+  pyenv global 2.7.13 3.6.0
 ```
 ## Make and install vim with +python3 option
 ```sh
