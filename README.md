@@ -21,7 +21,7 @@ Download neobundle.vim via git
   git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 ```
 
-## Building vim with +python3 option
+## Prepare Building vim with +python3 option
 
 This setting needs vim that was made with +python3 option.
 
@@ -30,11 +30,13 @@ This setting needs vim that was made with +python3 option.
   CONFIGURE_OPTS="--enable-shared" pyenv install 3.6.0
   pyenv global 2.7.12 3.6.0
 ```
-
+## Make and install vim with +python3 option
 ```sh
   git clone https://github.com/vim/vim.git
   cd vim
   LDFLAGS="-Wl,-rpath=${HOME}/.pyenv/versions/2.7.12/lib:${HOME}/.pyenv/versions/3.6.0/lib" ./configure --enable-pythoninterp=dynamic --enable-python3interp=dynamic --enable-multibyte --enable-fontset --with-features=huge --prefix=/opt/vim
+  make
+  sudo make install
 ```
 
 ## Add pyenv and rbenv
