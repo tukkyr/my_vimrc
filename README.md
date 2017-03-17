@@ -38,6 +38,7 @@ This setting needs vim that was made with +python3 option.
   make
   sudo make install
 ```
+Becareful, If you change pyenv root dir chenged.
 
 ## Add pyenv and rbenv
 
