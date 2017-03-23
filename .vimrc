@@ -103,3 +103,5 @@ let g:quickrun_config = {
 \       "outputter/buffer/close_on_empty" : 1,
 \   }
 \}
+
+cnoremap w!! w !sudo tee > /dev/null %<CR> :e!<CR>
