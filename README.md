@@ -27,14 +27,14 @@ This setting needs vim that was made with +python3 option.
 
 ```sh
   CONFIGURE_OPTS="--enable-shared" pyenv install 2.7.13
-  CONFIGURE_OPTS="--enable-shared" pyenv install 3.6.0
-  pyenv global 2.7.13 3.6.0
+  CONFIGURE_OPTS="--enable-shared" pyenv install 3.6.3
+  pyenv global 2.7.13 3.6.3
 ```
 ## Make and install vim with +python3 option
 ```sh
   git clone https://github.com/vim/vim.git
   cd vim
-  LDFLAGS="-Wl,-rpath=${HOME}/.pyenv/versions/2.7.13/lib:${HOME}/.pyenv/versions/3.6.0/lib" ./configure --enable-pythoninterp=dynamic --enable-python3interp=dynamic --enable-multibyte --enable-fontset --with-features=huge --prefix=/opt/vim
+  LDFLAGS="-Wl,-rpath=${HOME}/.pyenv/versions/2.7.13/lib:${HOME}/.pyenv/versions/3.6.3/lib" ./configure --enable-pythoninterp=dynamic --enable-python3interp=dynamic --enable-multibyte --enable-fontset --with-features=huge --prefix=/opt/vim
   make
   sudo make install
 ```
